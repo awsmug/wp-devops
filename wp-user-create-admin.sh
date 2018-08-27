@@ -5,4 +5,6 @@ includes_dir="${bin_dir}/includes"
 
 source ${includes_dir}/system.sh
 
+echo "Creating user with username \"admin\" and password \"password\"."
+
 $(__DIR__)/wp.sh user create admin admin@site.com --role=administrator --user_pass=password
