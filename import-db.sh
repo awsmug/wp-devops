@@ -1,7 +1,8 @@
 #!/bin/bash
 
-source $(dirname ${0})/includes/system.sh
-source $(dirname ${0})/includes/docker.sh
+source "includes-dir.sh"
+source ${includes_dir}/docker.sh
+source ${includes_dir}/system.sh
 
 script_file=$(__FILE__)
 script_dir=$(__DIR__)

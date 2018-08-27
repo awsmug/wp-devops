@@ -1,5 +1,6 @@
 #!/bin/bash
 
-source $(dirname ${0})/includes/system.sh
+source "includes-dir.sh"
+source ${includes_dir}/system.sh
 
- $(__DIR__)/wp.sh user create admin admin@site.com --role=administrator --user_pass=password
+$(__DIR__)/wp.sh user create admin admin@site.com --role=administrator --user_pass=password
