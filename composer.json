@@ -1,7 +1,7 @@
 {
   "name": "awsmug/dev-bash-wp-docker",
   "type": "dev",
-  "description": "WordPress Bash scripts for development with docker.",
+  "description": "Bash scripts for WordPress development with docker.",
   "license": "GPL-3.0",
   "authors": [
     {
