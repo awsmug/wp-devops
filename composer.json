@@ -10,5 +10,5 @@
       "homepage": "http://awesome.ug"
     }
   ],
-  "bin": ["wp.sh", "import-db.sh", "wp-user-create-admin.sh", "wp-user-create-admin.sh", "includes-dir.sh"]
+  "bin": ["wp.sh", "import-db.sh", "wp-user-create-admin.sh", "wp-user-create-admin.sh"]
 }
