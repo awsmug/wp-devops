@@ -1,0 +1,14 @@
+{
+  "name": "awsmug/dev-bash-wp-docker",
+  "type": "dev",
+  "description": "WordPress Bash scripts for development with docker.",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Sven Wagener",
+      "email": "sven@awesome.ug",
+      "homepage": "http://awesome.ug"
+    }
+  ],
+  "bin": ["bin/wp.sh", "bin/import-db.sh", "bin/wp-user-create-admin.sh"]
+}
