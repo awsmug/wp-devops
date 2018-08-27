@@ -2,7 +2,7 @@
 
 dc() {
     if [ -z  $1  ]; then
-        echo "Missing docker container type (e.g. web, php etc.)."
+        echo "Missing docker container service name (e.g. web, php etc.)."
         exit
     fi
 
