@@ -40,7 +40,7 @@ else
 fi
 
 if [ -z ${sql_dump}  ]; then
-    $(_wrong_syntax "import-db.sh [CONFIG_DIR] [SQL_FILE]")
+    echo $(_wrong_syntax "import-db.sh [CONFIG_DIR] [SQL_FILE]")
     exit
 fi
 
