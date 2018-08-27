@@ -73,3 +73,5 @@ echo "Search and replace \"${REMOTE_URL}\" with \"${LOCAL_URL}\" in WordPress da
 docker exec $(dc wp) wp search-replace "${REMOTE_URL}" "${LOCAL_URL}"
 
 echo "Finished!"
+
+read -n1 -r -p "Press any key to continue..." key
