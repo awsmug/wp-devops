@@ -8,7 +8,7 @@ ln "${bin_dir}/wp-user-create-admin.sh" "$(pwd)/wp-user-create-admin.sh"
 
 ln "${bin_dir}/import-db.sh" "$(pwd)/import-db.sh"
 
-project_name=$(basname $(pwd))
+project_name=$(basename $(pwd))
 
 ln "${bin_dir}/webserver-start.sh" "${HOME}/desktop/${project_name}-start"
 ln "${bin_dir}/webserver-stop.sh" "${HOME}/desktop/${project_name}-stop"
