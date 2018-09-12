@@ -1,8 +1,8 @@
 #!/bin/bash
-
 ##
 # WP-CLI shortcut
 ##
+
 bin_dir="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
 includes_dir="${bin_dir}/includes"
 
