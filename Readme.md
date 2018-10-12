@@ -79,7 +79,7 @@ of files we offer to setup by yourself:
 - conf/php/php.ini
 - conf/php/www.conf
 
-Please be careful on editing this files, because it causes basic configuration issues for the installation.
+Please be careful on editing this files, this can cause issues to your setup.
 
 ### Docker environment
 
