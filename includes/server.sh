@@ -10,7 +10,7 @@ _start() {
         exit 1
     fi
 
-    docker-compose up
+    docker-compose up -d
 }
 
 ##
