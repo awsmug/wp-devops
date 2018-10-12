@@ -36,16 +36,16 @@ _copy_config() {
 
     cp "${templates_dir}/docker-compose.yml" "$(pwd)/docker-compose.yml"
 
-    mkdir -r ${config_dir}
+    mkdir -p ${config_dir}
     cp "${config_template_dir}/db.conf" "${config_dir}/db.conf"
     cp "${config_template_dir}/ftp.conf" "${config_dir}/ftp.conf"
     cp "${config_template_dir}/server.conf" "${config_dir}/server.conf"
 
-    mkdir -r "${config_dir}/nginx"
+    mkdir -p "${config_dir}/nginx"
     cp "${config_template_dir}/nginx/default.conf" "${config_dir}/nginx/default.conf"
     cp "${config_template_dir}/nginx/nginx.conf" "${config_dir}/nginx/nginx.conf"
 
-    mkdir -r "${config_dir}/php"
+    mkdir -p "${config_dir}/php"
     cp "${config_template_dir}/php/Dockerfile" "${config_dir}/php/Dockerfile"
     cp "${config_template_dir}/php/php.ini" "${config_dir}/php/php.ini"
     cp "${config_template_dir}/php/www.conf" "${config_dir}/php/www.conf"
