@@ -5,7 +5,7 @@
 ##
 _start() {
     CONFIG_DIR="$(pwd)/conf"
-    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" up -d
+    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" --project-directory=$(pwd) up -d
 }
 
 ##
@@ -13,6 +13,6 @@ _start() {
 ##
 _stop() {
     CONFIG_DIR="$(pwd)/conf"
-    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" down
+    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" --project-directory=$(pwd) down
 }
 
