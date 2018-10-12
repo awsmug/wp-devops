@@ -39,7 +39,7 @@ function _copy_files {
 
         if [[ "yes" == ${EXAMPLE_PLUGIN_FILE} ]]; then
             mkdir -p "$(pwd)/src/"
-            cp "${TEMPLATES_DIR}/my-new-plugin.php" "$(pwd)/src/my-new-plugin.php"
+            cp "${TEMPLATES_DIR}/plugin.php" "$(pwd)/src/my-new-plugin.php"
         fi
 
     elif [[ "theme" == ${DEV_TYPE} ]]; then
@@ -49,7 +49,8 @@ function _copy_files {
 
         if [[ "yes" == ${EXAMPLE_THEME_FILE} ]]; then
             mkdir -p "$(pwd)/src/"
-            cp "${TEMPLATES_DIR}/style.css" "$(pwd)/src/style.css"
+            cp "${TEMPLATES_DIR}/theme-style.css" "$(pwd)/src/style.css"
+            cp "${TEMPLATES_DIR}/theme-index.php" "$(pwd)/src/index.php"
         fi
 
     elif [[ "site" == ${DEV_TYPE} ]]; then
