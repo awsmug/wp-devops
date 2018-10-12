@@ -40,7 +40,7 @@ Stop the local server.
 Updating devops scripts
 
 ```bash
-./devops.sh down
+./devops.sh update
 ```
 
 ### Open the site
@@ -51,7 +51,7 @@ Use the user 'admin' and password 'password' to login.
 
 ### WP-CLI
 
-Use the WP CLI with the wp.sh script. Example to list all plugins:
+Use the WP CLI with the wp.sh script. Example to list all plugins (see the documentation of WP CLI at https://wp-cli.org):
 
 ```bash
 ./wp.sh plugin list
