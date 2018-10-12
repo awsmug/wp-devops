@@ -1,8 +1,8 @@
 #!/bin/bash
 
-bin_dir="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
-includes_dir="${bin_dir}/includes"
-templates_dir="${bin_dir}/templates"
+export bin_dir="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
+export includes_dir="${bin_dir}/includes"
+export templates_dir="${bin_dir}/templates"
 
 ##
 # Initializing devops
