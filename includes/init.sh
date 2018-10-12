@@ -3,48 +3,48 @@
 ##
 # Initializing devops
 ##
-_link_files() {
+function _link_files {
     if [ -f "$(pwd)/devops.sh" ]; then
         rm "$(pwd)/devops.sh"
     fi
 
-    ln -s "${bin_dir}/devops.sh" "$(pwd)/devops.sh"
+    ln -s "${BIN_DIR}/devops.sh" "$(pwd)/devops.sh"
 
     if [ -f "$(pwd)/wp.sh" ]; then
         rm "$(pwd)/wp.sh"
     fi
 
-    ln -s "${bin_dir}/wp.sh" "$(pwd)/wp.sh"
+    ln -s "${BIN_DIR}/wp.sh" "$(pwd)/wp.sh"
 }
 
 ##
 # Copy config files
 ##
-_init_conf_files() {
+function _init_conf_files {
     if [ -f "$(pwd)/docker-compose.yml" ]; then
         echo $(_file_already_exists "$(pwd)/docker-compose.yml")
         echo "To re-init config files, please delete the $(pwd)/docker-compose.yml and rerun script."
         exit 1
     fi
 
-    config_template_dir="${templates_dir}/conf"
-    config_dir="$(pwd)/conf"
+    CONFIG_TEMPLATE_DIR="${TEMPLATES_DIR}/conf"
+    CONFIG_DIR="$(pwd)/conf"
 
-    cp "${templates_dir}/docker-compose.yml" "$(pwd)/docker-compose.yml"
+    cp "${TEMPLATES_DIR}/docker-compose.yml" "$(pwd)/docker-compose.yml"
 
-    mkdir -p ${config_dir}
-    cp "${config_template_dir}/db.conf" "${config_dir}/db.conf"
-    cp "${config_template_dir}/ftp.conf" "${config_dir}/ftp.conf"
-    cp "${config_template_dir}/server.conf" "${config_dir}/server.conf"
+    mkdir -p ${CONFIG_DIR}
+    cp "${CONFIG_TEMPLATE_DIR}/db.conf" "${CONFIG_DIR}/db.conf"
+    cp "${CONFIG_TEMPLATE_DIR}/ftp.conf" "${CONFIG_DIR}/ftp.conf"
+    cp "${CONFIG_TEMPLATE_DIR}/server.conf" "${CONFIG_DIR}/server.conf"
 
-    mkdir -p "${config_dir}/nginx"
-    cp "${config_template_dir}/nginx/default.conf" "${config_dir}/nginx/default.conf"
-    cp "${config_template_dir}/nginx/nginx.conf" "${config_dir}/nginx/nginx.conf"
+    mkdir -p "${CONFIG_DIR}/nginx"
+    cp "${CONFIG_TEMPLATE_DIR}/nginx/default.conf" "${CONFIG_DIR}/nginx/default.conf"
+    cp "${CONFIG_TEMPLATE_DIR}/nginx/nginx.conf" "${CONFIG_DIR}/nginx/nginx.conf"
 
-    mkdir -p "${config_dir}/php"
-    cp "${config_template_dir}/php/Dockerfile" "${config_dir}/php/Dockerfile"
-    cp "${config_template_dir}/php/php.ini" "${config_dir}/php/php.ini"
-    cp "${config_template_dir}/php/www.conf" "${config_dir}/php/www.conf"
+    mkdir -p "${CONFIG_DIR}/php"
+    cp "${CONFIG_TEMPLATE_DIR}/php/Dockerfile" "${CONFIG_DIR}/php/Dockerfile"
+    cp "${CONFIG_TEMPLATE_DIR}/php/php.ini" "${CONFIG_DIR}/php/php.ini"
+    cp "${CONFIG_TEMPLATE_DIR}/php/www.conf" "${CONFIG_DIR}/php/www.conf"
 
     echo "Finished copying configuration files."
 }

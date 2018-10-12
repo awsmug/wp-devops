@@ -1,20 +1,20 @@
 #!/bin/bash
 
-export bin_dir="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
-export includes_dir="${bin_dir}/includes"
-export templates_dir="${bin_dir}/templates"
+export BIN_DIR="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
+export INCLUDES_DIR="${BIN_DIR}/includes"
+export TEMPLATES_DIR="${BIN_DIR}/templates"
 
-source ${includes_dir}/system.sh
-source ${includes_dir}/init.sh
-source ${includes_dir}/docker.sh
-source ${includes_dir}/server.sh
+source ${INCLUDES_DIR}/system.sh
+source ${INCLUDES_DIR}/init.sh
+source ${INCLUDES_DIR}/docker.sh
+source ${INCLUDES_DIR}/server.sh
 
 ##
 # Initializing devops
 ##
 if [ "$1" = "init" ]; then
     $(_init_conf_files)
-    $(_link_files)
+    #$(_link_files)
 
 ##
 # Updating devops
