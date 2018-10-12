@@ -35,7 +35,7 @@ function _copy_files {
     if [[ "plugin" == ${DEV_TYPE} ]]; then
         cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "${CONFIG_DIR}/docker-compose.yml"
 
-        read -p "Do you want do add an initial plugin file? (yes|no) " EXAMPLE_PLUGIN_FILE
+        read -p "Do you want do add example plugin files? (yes|no) " EXAMPLE_PLUGIN_FILE
 
         if [[ "yes" == ${EXAMPLE_PLUGIN_FILE} ]]; then
             mkdir -p "$(pwd)/src/"
