@@ -95,3 +95,9 @@ The environment contains:
 * WordPress
 * WP-CLI
 * phpMyAdmin
+
+### OS
+
+The scripts are tested on Mac OSX. If you have informations or issues on other systems, please report on:
+ 
+[Github](https://github.com/awsmug/wp-devops/issues)
