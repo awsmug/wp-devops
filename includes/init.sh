@@ -32,13 +32,13 @@ function _copy_files {
 
     echo "Dev Type: " ${DEV_TYPE}
 
-    if [ "plugin" = ${DEV_TYPE} ]; then
+    if [ "plugin" == ${DEV_TYPE} ]; then
         cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "$(pwd)/docker-compose.yml"
 
-    elif [ "site" = ${DEV_TYPE} ]; then
+    elif [ "site" == ${DEV_TYPE} ]; then
         cp "${TEMPLATES_DIR}/docker-compose-site.yml" "$(pwd)/docker-compose.yml"
 
-    elif [ "" = ${DEV_TYPE} ]; then
+    elif [ "" == ${DEV_TYPE} ]; then
         cp "${TEMPLATES_DIR}/docker-compose-site.yml" "$(pwd)/docker-compose.yml"
 
     else
