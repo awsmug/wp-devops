@@ -65,8 +65,6 @@ function _copy_files {
         exit 1
     fi
 
-    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" --project-directory=$(pwd) build
-
     cp "${CONFIG_TEMPLATE_DIR}/db.conf" "${CONFIG_DIR}/db.conf"
     cp "${CONFIG_TEMPLATE_DIR}/ftp.conf" "${CONFIG_DIR}/ftp.conf"
     cp "${CONFIG_TEMPLATE_DIR}/server.conf" "${CONFIG_DIR}/server.conf"
@@ -79,4 +77,6 @@ function _copy_files {
     cp "${CONFIG_TEMPLATE_DIR}/php/Dockerfile" "${CONFIG_DIR}/php/Dockerfile"
     cp "${CONFIG_TEMPLATE_DIR}/php/php.ini" "${CONFIG_DIR}/php/php.ini"
     cp "${CONFIG_TEMPLATE_DIR}/php/www.conf" "${CONFIG_DIR}/php/www.conf"
+
+    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" --project-directory=$(pwd) build
 }
