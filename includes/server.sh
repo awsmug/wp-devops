@@ -4,25 +4,15 @@
 # Starting environment
 ##
 _start() {
-    if [ ! -f "$(pwd)/docker-compose.yml" ]; then
-        $(_file_not_exists "docker-compose.yml")
-        echo "Please run setup.sh before launching."
-        exit 1
-    fi
-
-    docker-compose up -d
+    CONFIG_DIR="$(pwd)/conf"
+    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" up -d
 }
 
 ##
 # Stopping environment
 ##
 _stop() {
-    if [ ! -f "$(pwd)/docker-compose.yml" ]; then
-        $(_file_not_exists "docker-compose.yml")
-        echo "Please run setup.sh before launching."
-        exit 1
-    fi
-
-    docker-compose down
+    CONFIG_DIR="$(pwd)/conf"
+    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" down
 }
 

@@ -31,13 +31,13 @@ function _copy_files {
     read -p "Do you want do develop a 'site' or a 'plugin'? (site) " DEV_TYPE
 
     if [[ "plugin" == ${DEV_TYPE} ]]; then
-        cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "$(pwd)/docker-compose.yml"
+        cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "${CONFIG_DIR}/docker-compose.yml"
 
     elif [[ "site" == ${DEV_TYPE} ]]; then
-        cp "${TEMPLATES_DIR}/docker-compose-site.yml" "$(pwd)/docker-compose.yml"
+        cp "${TEMPLATES_DIR}/docker-compose-site.yml" "${CONFIG_DIR}/docker-compose.yml"
 
     elif [[ "" == ${DEV_TYPE} ]]; then
-        cp "${TEMPLATES_DIR}/docker-compose-site.yml" "$(pwd)/docker-compose.yml"
+        cp "${TEMPLATES_DIR}/docker-compose-site.yml" "${CONFIG_DIR}/docker-compose.yml"
 
     else
         echo "Wrong input!"
