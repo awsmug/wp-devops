@@ -27,12 +27,6 @@ function _link_files {
 function _init_conf_files {
     local TEMPLATES_DIR=$1
 
-    if [ -f "$(pwd)/docker-compose.yml" ]; then
-        echo $(_file_already_exists "$(pwd)/docker-compose.yml")
-        echo "To re-init config files, please delete the $(pwd)/docker-compose.yml and rerun script."
-        exit 1
-    fi
-
     CONFIG_TEMPLATE_DIR=${TEMPLATES_DIR}/conf
     CONFIG_DIR="$(pwd)/conf"
 
