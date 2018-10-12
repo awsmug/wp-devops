@@ -1,6 +1,6 @@
 # WordPress Devops
 
-The WP Devops contains an environment is based on docker. It supports site, plugin and theme development.
+The WP Devops contains an environment is based on docker-compose. It supports site, plugin and theme development.
 
 ## Setting up environment
 
@@ -40,14 +40,21 @@ Updating devops scripts
 ./devops.sh down
 ```
 
-## Local Development
+### Open the site
 
-### Docker container for development
+## System
 
-The docker on which the environment is based contains.
+### Docker environment for development
 
-* Nginx webserver
+In contrast to the one container structure of the WordPress docker container, the WP devops is based on a docker-compose 
+environment which is a lot more configurable. It contains a docker-compose file for the three types of development for 
+sites, themes or plugins. 
+
+The environment contains:
+
+* Nginx
+* PHP (with Xdebug)
+* Mariadb
 * WordPress
 * WP-CLI
-* PHP
 * phpMyAdmin
