@@ -25,19 +25,19 @@ section.
 vendor/bin/devops.sh init
 ```
 
-Start the local server (After the first start, just wait a while until you see a ready installed WordPress).
+Start the local server (After the first start, just wait a while until you see a ready installed WordPress):
 
 ```bash
 ./devops.sh up
 ```
 
-Stop the local server.
+Stop the local server:
 
 ```bash
 ./devops.sh down
 ```
 
-Updating devops scripts
+Updating devops scripts:
 
 ```bash
 ./devops.sh update
@@ -56,6 +56,12 @@ Use the WP CLI with the wp.sh script. Example to list all plugins (see the docum
 ```bash
 ./wp.sh plugin list
 ```
+
+### Debugging
+
+To debug your script we implemented Xdebug to the PHP configuration. To get it running for your, just add your local IP 
+to the php.ini file. This can be done in the 'conf/php' directory and replace the #DEBUG_REMOTE_IP# string with your IP.
+The default remote debugging port is 9000.
 
 ## System
 
