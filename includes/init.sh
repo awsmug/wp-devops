@@ -46,8 +46,6 @@ function _copy_files {
         exit 1
     fi
 
-    cp "${TEMPLATES_DIR}/docker-compose.yml" "$(pwd)/docker-compose.yml"
-
     mkdir -p ${CONFIG_DIR}
     cp "${CONFIG_TEMPLATE_DIR}/db.conf" "${CONFIG_DIR}/db.conf"
     cp "${CONFIG_TEMPLATE_DIR}/ftp.conf" "${CONFIG_DIR}/ftp.conf"
