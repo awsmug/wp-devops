@@ -5,9 +5,10 @@ export includes_dir="${bin_dir}/includes"
 export templates_dir="${bin_dir}/templates"
 
 source ${includes_dir}/system.sh
+source ${includes_dir}/init.sh
 source ${includes_dir}/docker.sh
 source ${includes_dir}/server.sh
-source ${includes_dir}/devops-init.sh
+
 
 ##
 # Advising scripts
