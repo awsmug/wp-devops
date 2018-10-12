@@ -13,8 +13,11 @@ source ${INCLUDES_DIR}/server.sh
 # Initializing devops
 ##
 if [ "$1" = "init" ]; then
-    $(_copy_files ${TEMPLATES_DIR})
-    $(_link_files ${BIN_DIR})
+    _copy_files ${TEMPLATES_DIR}
+    echo "Finished copying config files."
+
+    _link_files ${BIN_DIR}
+    echo "Finished linking command files."
 
 ##
 # Updating devops
