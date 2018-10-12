@@ -1,8 +1,7 @@
 # WordPress Devops (with Docker)
 
-The WP Devops contains an environment which is based on docker. It supports site-, plugin- and theme-development. This 
-project want to leave the VVV way for developing WordPress projects and to use a more lightweight and easy way to 
-develop by using docker.
+This project want to leave the VVV way for developing WordPress projects and to use a more lightweight and easy way to 
+develop by using docker. The WP Devops contains an easy environment which is based on docker. It supports site-, plugin- and theme-development. 
 
 Instead of using the standard [docker wordpress container](https://hub.docker.com/_/wordpress/), WP Devops is using a [docker-compose](https://docs.docker.com/compose/production/) container infrastructure
 where everything can be setup in detail.
