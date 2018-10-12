@@ -59,6 +59,8 @@ _copy_config() {
 if [ "$1" = "init" ]; then
     $(_link_files)
     $(_copy_config)
+elif [ "$1" = "update" ]; then
+    $(_link_files)
 else
-    echo "Usage: $(basename $0) <init>"
+    echo "Usage: $(basename $0) <init|update>"
 fi
