@@ -111,5 +111,5 @@ The scripts are tested on Mac OSX. If you have informations or issues on other s
 We want to add further functionalities to the project which helps your on developing. Further options we want to add:
 
 - Codeception for unit-testing and user testing.
-- Adding a mailcatcher.
+- Adding mailcatcher.
 - Adding deployment scripts.
