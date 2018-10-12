@@ -13,10 +13,12 @@ source ${includes_dir}/devops-init.sh
 # Advising scripts
 ##
 if [ "$1" = "init" ]; then
+    $(composer update awsmug/wp-devops)
     $(_link_files)
     $(_copy_config)
 
 elif [ "$1" = "update" ]; then
+    $(composer update awsmug/wp-devops)
     $(_link_files)
 
 elif [ "$1" = "up" ]; then
