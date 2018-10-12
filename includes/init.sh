@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 ##
 # Initializing devops
 ##
@@ -45,6 +43,4 @@ function _copy_files {
     cp "${CONFIG_TEMPLATE_DIR}/php/Dockerfile" "${CONFIG_DIR}/php/Dockerfile"
     cp "${CONFIG_TEMPLATE_DIR}/php/php.ini" "${CONFIG_DIR}/php/php.ini"
     cp "${CONFIG_TEMPLATE_DIR}/php/www.conf" "${CONFIG_DIR}/php/www.conf"
-
-    echo "Finished copying configuration files."
 }
