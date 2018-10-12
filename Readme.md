@@ -6,7 +6,8 @@ The WP Devops contains an environment is based on docker-compose. It supports si
 
 ### Requirements
 
-For this library [Composer](https://getcomposer.org/download/) and [Docker](https://www.docker.com/) is required. Please install before starting.
+For this library [Composer](https://getcomposer.org/download/) and [Docker](https://www.docker.com/) is required. Please 
+install before starting.
 
 ### Install
 
@@ -16,13 +17,15 @@ Add WP Devops functionality by using Composer.
 composer require awsmug/wp-devops:dev-master
 ```
 
-Install the environment by setting up config files for git, composer, phpunit and so on.
+Install the environment by setting up config files. Just follow the instructions. If you have setup a theme or a plugin
+installation you can put your code to the ./src directory and it will be displayed in the wp-admin theme or plugin 
+section.
 
 ```bash
 vendor/bin/devops.sh init
 ```
 
-Start the local server.
+Start the local server (After the first start, just wait a while until you see a ready installed WordPress).
 
 ```bash
 ./devops.sh up
