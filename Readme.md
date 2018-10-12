@@ -100,3 +100,9 @@ The environment contains:
 
 The scripts are tested on Mac OSX. If you have informations or issues on other systems, please report on 
 [Github](https://github.com/awsmug/wp-devops/issues).
+
+## Roadmap
+
+We want to add further functionalities to the project which helps your on developing. Further options we want to add:
+
+- Codeception (for unit-testing and user testing)
