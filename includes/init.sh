@@ -24,10 +24,10 @@ function _link_files {
 ##
 # Copy config files
 ##
-function _init_conf_files {
+function _copy_files {
     local TEMPLATES_DIR=$1
 
-    CONFIG_TEMPLATE_DIR=${TEMPLATES_DIR}/conf
+    CONFIG_TEMPLATE_DIR="${TEMPLATES_DIR}/conf"
     CONFIG_DIR="$(pwd)/conf"
 
     cp "${TEMPLATES_DIR}/docker-compose.yml" "$(pwd)/docker-compose.yml"

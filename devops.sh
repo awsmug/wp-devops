@@ -13,7 +13,7 @@ source ${INCLUDES_DIR}/server.sh
 # Initializing devops
 ##
 if [ "$1" = "init" ]; then
-    $(_init_conf_files ${INCLUDES_DIR})
+    $(_copy_files ${TEMPLATES_DIR})
     $(_link_files ${BIN_DIR})
 
 ##
