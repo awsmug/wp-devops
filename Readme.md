@@ -49,6 +49,14 @@ The site can be reached at http://localhost at the browser. The admin can be rea
 
 Use the user 'admin' and password 'password' to login.
 
+### WP-CLI
+
+Use the WP CLI with the wp.sh script. Example to list all plugins:
+
+```bash
+./wp.sh plugin list
+```
+
 ## System
 
 ### Docker environment for development
