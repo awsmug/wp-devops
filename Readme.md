@@ -42,13 +42,17 @@ Updating devops scripts
 
 ### Open the site
 
+The site can be reached at http://localhost at the browser. The admin can be reached at http://localhost/wp-admin/.
+
+Use the user 'admin' and password 'password' to login.
+
 ## System
 
 ### Docker environment for development
 
 In contrast to the one container structure of the WordPress docker container, the WP devops is based on a docker-compose 
 environment which is a lot more configurable. It contains a docker-compose file for the three types of development for 
-sites, themes or plugins. 
+sites, themes and plugins. 
 
 The environment contains:
 
