@@ -30,6 +30,8 @@ function _copy_files {
 
     read -p "Do you want do develop a 'site' or a 'plugin'? (site) " DEV_TYPE
 
+    mkdir -p ${CONFIG_DIR}
+
     if [[ "plugin" == ${DEV_TYPE} ]]; then
         cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "${CONFIG_DIR}/docker-compose.yml"
 
@@ -41,10 +43,10 @@ function _copy_files {
 
     else
         echo "Wrong input!"
+        rm -rf ${CONFIG_DIR}
         exit 1
     fi
 
-    mkdir -p ${CONFIG_DIR}
     cp "${CONFIG_TEMPLATE_DIR}/db.conf" "${CONFIG_DIR}/db.conf"
     cp "${CONFIG_TEMPLATE_DIR}/ftp.conf" "${CONFIG_DIR}/ftp.conf"
     cp "${CONFIG_TEMPLATE_DIR}/server.conf" "${CONFIG_DIR}/server.conf"
