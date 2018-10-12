@@ -9,12 +9,10 @@ source ${includes_dir}/init.sh
 source ${includes_dir}/docker.sh
 source ${includes_dir}/server.sh
 
-
 ##
 # Advising scripts
 ##
 if [ "$1" = "init" ]; then
-    $(composer update awsmug/wp-devops)
     $(_link_files)
     $(_copy_config)
 
