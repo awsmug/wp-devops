@@ -34,6 +34,8 @@ function _copy_files {
 
     if [[ "plugin" == ${DEV_TYPE} ]]; then
         cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "${CONFIG_DIR}/docker-compose.yml"
+        mkdir -p "$(pwd)/src/"
+        cp "${TEMPLATES_DIR}/my-new-plugin.php" "$(pwd)/src/my-new-plugin.php"
 
     elif [[ "site" == ${DEV_TYPE} ]]; then
         cp "${TEMPLATES_DIR}/docker-compose-site.yml" "${CONFIG_DIR}/docker-compose.yml"
