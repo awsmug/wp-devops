@@ -10,7 +10,7 @@ where everything can be setup in detail.
 
 ### Requirements
 
-For this library [Composer](https://getcomposer.org/download/) and [Docker](https://www.docker.com/) is required. Please 
+For WP Devops [Composer](https://getcomposer.org/download/) and [Docker](https://www.docker.com/) is required. Please 
 install before starting.
 
 ### Install
