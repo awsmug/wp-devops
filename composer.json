@@ -1,5 +1,5 @@
 {
-  "name": "awsmug/dev-bash-wp-docker",
+  "name": "awsmug/wp-devops",
   "type": "dev",
   "description": "Bash scripts for WordPress development with docker.",
   "license": "GPL-3.0",
@@ -10,5 +10,5 @@
       "homepage": "http://awesome.ug"
     }
   ],
-  "bin": ["devops-init.sh"]
+  "bin": ["devops.sh"]
 }
