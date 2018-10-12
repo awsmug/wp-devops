@@ -4,7 +4,7 @@ The WP Devops contains an environment which is based on docker. It supports site
 project want to leave the VVV way for developing WordPress projects and to use a more lightweight and easy way to 
 develop by using docker.
 
-Instead of using the standard [docker wordpress container](https://hub.docker.com/_/wordpress/), WP Devops is using a docker-compose container infrastructure
+Instead of using the standard [docker wordpress container](https://hub.docker.com/_/wordpress/), WP Devops is using a [docker-compose](https://docs.docker.com/compose/production/) container infrastructure
 where everything can be setup in detail.
 
 ## Setting up environment
@@ -16,7 +16,7 @@ install before starting.
 
 ### Install
 
-Add WP Devops functionality by using Composer. 
+Add WP Devops functionality by using composer. 
 
 ```bash
 composer require awsmug/wp-devops:dev-master
@@ -24,7 +24,7 @@ composer require awsmug/wp-devops:dev-master
 
 Install the environment by setting up config files. Just follow the instructions. If you have setup a theme or a plugin
 installation you can put your code to the ./src directory and it will be displayed in the wp-admin theme or plugin 
-section.
+section or use the initial plugin or theme files.
 
 ```bash
 vendor/bin/devops.sh init
