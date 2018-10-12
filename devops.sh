@@ -14,7 +14,7 @@ source ${includes_dir}/server.sh
 ##
 if [ "$1" = "init" ]; then
     $(_link_files)
-    $(_copy_config)
+    $(_copy_files)
 
 elif [ "$1" = "update" ]; then
     $(composer update awsmug/wp-devops)
