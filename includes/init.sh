@@ -1,9 +1,13 @@
 #!/bin/bash
 
+
+
 ##
 # Initializing devops
 ##
 function _link_files {
+    local BIN_DIR=$1
+
     if [ -f "$(pwd)/devops.sh" ]; then
         rm "$(pwd)/devops.sh"
     fi
@@ -21,13 +25,15 @@ function _link_files {
 # Copy config files
 ##
 function _init_conf_files {
+    local TEMPLATES_DIR=$1
+
     if [ -f "$(pwd)/docker-compose.yml" ]; then
         echo $(_file_already_exists "$(pwd)/docker-compose.yml")
         echo "To re-init config files, please delete the $(pwd)/docker-compose.yml and rerun script."
         exit 1
     fi
 
-    CONFIG_TEMPLATE_DIR="${TEMPLATES_DIR}/conf"
+    CONFIG_TEMPLATE_DIR=${TEMPLATES_DIR}/conf
     CONFIG_DIR="$(pwd)/conf"
 
     cp "${TEMPLATES_DIR}/docker-compose.yml" "$(pwd)/docker-compose.yml"

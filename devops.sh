@@ -13,15 +13,15 @@ source ${INCLUDES_DIR}/server.sh
 # Initializing devops
 ##
 if [ "$1" = "init" ]; then
-    $(_init_conf_files)
-    #$(_link_files)
+    $(_init_conf_files ${INCLUDES_DIR})
+    $(_link_files ${BIN_DIR})
 
 ##
 # Updating devops
 ##
 elif [ "$1" = "update" ]; then
     $(composer update awsmug/wp-devops)
-    $(_link_files)
+    $(_link_files ${BIN_DIR})
 
 ##
 # Starting server
