@@ -63,6 +63,10 @@ To debug your script we implemented Xdebug to the PHP configuration. To get it r
 local IP to the php.ini file. This can be done in the 'conf/php' directory and replace the *#DEBUG_REMOTE_IP#* string with 
 your local IP. The default remote debugging port is *9000*.
 
+### phpMyAdmin
+
+You can reach the phpMyAdmin interface at the URL http://localhost:8080.
+
 ## System
 
 ### Docker environment for development
