@@ -59,9 +59,9 @@ Use the WP CLI with the wp.sh script. Example to list all plugins (see the docum
 
 ### Debugging
 
-To debug your script we implemented Xdebug to the PHP configuration. To get it running for your, just add your local IP 
-to the php.ini file. This can be done in the 'conf/php' directory and replace the #DEBUG_REMOTE_IP# string with your IP.
-The default remote debugging port is 9000.
+To debug your script we implemented Xdebug to the PHP configuration. To get it running for your project, just add your 
+local IP to the php.ini file. This can be done in the 'conf/php' directory and replace the *#DEBUG_REMOTE_IP#* string with 
+your local IP. The default remote debugging port is *9000*.
 
 ## System
 
