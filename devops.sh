@@ -19,8 +19,6 @@ if [ "$1" = "init" ]; then
     _link_files ${BIN_DIR}
     echo "Finished linking command files."
 
-    $(_start)
-
 ##
 # Updating devops
 ##
