@@ -28,14 +28,29 @@ function _copy_files {
     CONFIG_TEMPLATE_DIR="${TEMPLATES_DIR}/conf"
     CONFIG_DIR="$(pwd)/conf"
 
-    read -p "Do you want do develop a 'site' or a 'plugin'? (site) " DEV_TYPE
+    read -p "Do you want do develop a 'site', 'plugin' or 'theme'? (site) " DEV_TYPE
 
     mkdir -p ${CONFIG_DIR}
 
     if [[ "plugin" == ${DEV_TYPE} ]]; then
         cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "${CONFIG_DIR}/docker-compose.yml"
-        mkdir -p "$(pwd)/src/"
-        cp "${TEMPLATES_DIR}/my-new-plugin.php" "$(pwd)/src/my-new-plugin.php"
+
+        read -p "Do you want do add an initial plugin file? (yes|no) " EXAMPLE_PLUGIN_FILE
+
+        if [[ "yes" == ${EXAMPLE_PLUGIN_FILE} ]]; then
+            mkdir -p "$(pwd)/src/"
+            cp "${TEMPLATES_DIR}/my-new-plugin.php" "$(pwd)/src/my-new-plugin.php"
+        fi
+
+    elif [[ "theme" == ${DEV_TYPE} ]]; then
+        cp "${TEMPLATES_DIR}/docker-compose-theme.yml" "${CONFIG_DIR}/docker-compose.yml"
+
+        read -p "Do you want do add example theme files? (yes|no) " EXAMPLE_THEME_FILE
+
+        if [[ "yes" == ${EXAMPLE_THEME_FILE} ]]; then
+            mkdir -p "$(pwd)/src/"
+            cp "${TEMPLATES_DIR}/style.css" "$(pwd)/src/style.css"
+        fi
 
     elif [[ "site" == ${DEV_TYPE} ]]; then
         cp "${TEMPLATES_DIR}/docker-compose-site.yml" "${CONFIG_DIR}/docker-compose.yml"
