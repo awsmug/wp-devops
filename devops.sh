@@ -23,8 +23,9 @@ if [ "$1" = "init" ]; then
 # Updating devops
 ##
 elif [ "$1" = "update" ]; then
-    $(composer update awsmug/wp-devops)
-    $(_link_files ${BIN_DIR})
+    composer update awsmug/wp-devops
+    _link_files ${BIN_DIR}
+    echo "Finished updating devops."
 
 ##
 # Starting server
