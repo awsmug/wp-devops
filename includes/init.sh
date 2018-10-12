@@ -28,7 +28,7 @@ function _copy_files {
     CONFIG_TEMPLATE_DIR="${TEMPLATES_DIR}/conf"
     CONFIG_DIR="$(pwd)/conf"
 
-    read -p "Do you want do develop a 'site' or a 'plugin' (site)? " DEV_TYPE
+    read -p "Do you want do develop a 'site' or a 'plugin'? (site) " DEV_TYPE
 
     if [[ "plugin" == ${DEV_TYPE} ]]; then
         cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "$(pwd)/docker-compose.yml"
