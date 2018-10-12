@@ -29,7 +29,7 @@ _wrong_syntax() {
 }
 
 ##
-# Echos wrong directory
+# Echos directory not existing
 ##
 _dir_not_exists() {
     syntax=${1}
@@ -37,11 +37,19 @@ _dir_not_exists() {
 }
 
 ##
-# Echos wrong directory
+# Echos file not existing
 ##
 _file_not_exists() {
     syntax=${1}
     echo $(_error "The file \"${1}\" does not exist.")
+}
+
+##
+# Echos file already existing
+##
+_file_already_exists() {
+    syntax=${1}
+    echo $(_error "The file \"${1}\" already exist.")
 }
 
 ##
