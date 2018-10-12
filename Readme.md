@@ -69,9 +69,21 @@ You can reach the phpMyAdmin interface at the URL http://localhost:8080.
 
 ## System
 
-### Docker environment for development
+### Configuration
 
-In contrast to the one container structure of the WordPress docker container, the WP devops is based on a docker-compose 
+For further settings we have added further configuration files for your individual server configuration. This is a list
+of files we offer to setup by yourself:
+
+- conf/nginx/default.conf
+- conf/nginx/nginx.conf
+- conf/php/php.ini
+- conf/php/www.conf
+
+Please be careful on editing this files, because it causes basic configuration issues for the installation.
+
+### Docker environment
+
+In contrast to the one container structure of the WordPress docker container, the WP Devops is based on a docker-compose 
 environment which is a lot more configurable. It contains a docker-compose file for the three types of development for 
 sites, themes and plugins. 
 
