@@ -20,7 +20,7 @@ _link_files() {
 ##
 # Copy config files
 ##
-_copy_files() {
+_init_conf_files() {
     if [ -f "$(pwd)/docker-compose.yml" ]; then
         echo $(_file_already_exists "$(pwd)/docker-compose.yml")
         echo "To re-init config files, please delete the $(pwd)/docker-compose.yml and rerun script."
