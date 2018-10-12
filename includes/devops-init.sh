@@ -4,11 +4,11 @@
 # Initializing devops
 ##
 _link_files() {
-    if [ -f "$(pwd)/server.sh" ]; then
-        rm "$(pwd)/server.sh"
+    if [ -f "$(pwd)/devops.sh" ]; then
+        rm "$(pwd)/devops.sh"
     fi
 
-    ln -s "${bin_dir}/server.sh" "$(pwd)/server.sh"
+    ln -s "${bin_dir}/devops.sh" "$(pwd)/devops.sh"
 
     if [ -f "$(pwd)/wp.sh" ]; then
         rm "$(pwd)/wp.sh"
