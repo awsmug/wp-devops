@@ -8,7 +8,7 @@ services:
       MYSQL_USER: root
       MYSQL_PASS: root
       WP_VERSION: 4.9.8
-      WP_LOCALE: de_DE
+      WP_LOCALE: en_US
       WP_USER: admin
       WP_PASS: password
       WP_URL: localhost
