@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export BIN_DIR="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
+export CONF_DIR="$(pwd)/conf"
 export INCLUDES_DIR="${BIN_DIR}/includes"
 export TEMPLATES_DIR="${BIN_DIR}/templates"
 
@@ -23,6 +24,8 @@ if [ "$1" = "init" ]; then
 # Updating devops
 ##
 elif [ "$1" = "update" ]; then
+    docker-compose -f "${CONF_DIR}/docker-compose.yml" --project-directory=$(pwd) pull
+    docker-compose -f "${CONF_DIR}/docker-compose.yml" --project-directory=$(pwd) build
     composer update awsmug/wp-devops
     _link_files ${BIN_DIR}
     echo "Finished updating devops."
