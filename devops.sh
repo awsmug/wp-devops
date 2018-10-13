@@ -43,8 +43,14 @@ elif [ "$1" = "down" ]; then
     $(_stop)
 
 ##
+# Stopping server
+##
+elif [ "$1" = "restart" ]; then
+    $(_restart)
+
+##
 # Help on wrong usage
 ##
 else
-    echo "Usage: $(basename $0) <init|update|up|down>"
+    echo "Usage: $(basename $0) <init|update|up|down|restart>"
 fi
