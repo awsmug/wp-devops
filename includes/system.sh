@@ -27,6 +27,14 @@ _wrong_syntax() {
     syntax=${1}
     echo $(_error "Wrong input! Correct syntax is: ${syntax}.")
 }
+##
+# Missing param
+##
+_missing_param() {
+    number=${1}
+    usage=${2}
+    echo $(_error "Missing Param ${syntax}. Correct usage is: ${usage}.")
+}
 
 ##
 # Echos directory not existing

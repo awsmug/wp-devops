@@ -49,8 +49,14 @@ elif [ "$1" = "restart" ]; then
     $(_restart)
 
 ##
+# Import db
+##
+elif [ "$1" = "dbimport" ]; then
+    $(_dbimport $2)
+
+##
 # Help on wrong usage
 ##
 else
-    echo "Usage: $(basename $0) <init|update|up|down|restart>"
+    echo "Usage: $(basename $0) <init|update|up|down|restart|dbimport [filename]>"
 fi
