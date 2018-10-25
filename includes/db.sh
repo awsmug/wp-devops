@@ -3,7 +3,7 @@
 ##
 # Imports a dump to db
 ##
-db_import() {
+_db_import() {
     sql_dump=${1}
 
     if [ -z ${sql_dump} ]; then
@@ -25,7 +25,7 @@ db_import() {
     echo "This will drop all database data of the local installation and will replace it by new data. Are you really sure? (y/N)"
     read i_am_sure
 
-    if [ ${i_am_sure} != "y" ]; then
+    if [[ ${i_am_sure} != "y" ]]; then
         "Exited import before starting."
         exit
     fi
@@ -48,6 +48,5 @@ db_import() {
     echo "Finished!"
 
     read -n1 -r -p "Press any key to continue..." key
-
 }
 

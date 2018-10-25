@@ -53,7 +53,7 @@ elif [ "$1" = "restart" ]; then
 # Import db
 ##
 elif [ "$1" = "dbimport" ]; then
-    $(_dbimport $2)
+    $(_db_import $2)
 
 ##
 # Help on wrong usage
