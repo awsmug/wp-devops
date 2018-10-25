@@ -35,25 +35,25 @@ elif [ "$1" = "update" ]; then
 # Starting server
 ##
 elif [ "$1" = "up" ]; then
-    $(_start)
+    _start
 
 ##
 # Stopping server
 ##
 elif [ "$1" = "down" ]; then
-    $(_stop)
+    _stop
 
 ##
 # Stopping server
 ##
 elif [ "$1" = "restart" ]; then
-    $(_restart)
+    _restart
 
 ##
 # Import db
 ##
 elif [ "$1" = "dbimport" ]; then
-    $(_db_import $2)
+   _db_import $2
 
 ##
 # Help on wrong usage

@@ -22,8 +22,7 @@ _db_import() {
     source ${db_conf}
     source ${server_conf}
 
-    echo "This will drop all database data of the local installation and will replace it by new data. Are you really sure? (y/N)"
-    read i_am_sure
+    read "This will drop all database data of the local installation and will replace it by new data. Are you really sure? (y/N)" i_am_sure
 
     if [[ ${i_am_sure} != "y" ]]; then
         "Exited import before starting."
