@@ -6,6 +6,7 @@ export INCLUDES_DIR="${BIN_DIR}/includes"
 export TEMPLATES_DIR="${BIN_DIR}/templates"
 
 source ${INCLUDES_DIR}/system.sh
+source ${INCLUDES_DIR}/db.sh
 source ${INCLUDES_DIR}/init.sh
 source ${INCLUDES_DIR}/docker.sh
 source ${INCLUDES_DIR}/server.sh
