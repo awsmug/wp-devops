@@ -1,4 +1,4 @@
-# WordPress Devops (with Docker)
+# WordPress Devops (with Docker) - Version 0.1.0
 
 This project want to leave the VVV way for developing WordPress projects and to use a more lightweight and easy way to 
 develop by using docker. The WP Devops contains an easy environment which is based on docker. It supports site-, plugin- and theme-development. 
