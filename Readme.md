@@ -111,5 +111,6 @@ We want to add further functionalities to the project which helps your on develo
 
 - Codeception for unit-testing and user testing.
 - Use of local domains instead of only localhost.
-- Adding mailcatcher.
-- Adding deployment scripts.
+- Xdebug autoconfig or input of IP address.
+- Mailcatcher for catching emails from site.
+- Deployment scripts.
