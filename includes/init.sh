@@ -65,9 +65,7 @@ function _copy_files {
         exit 1
     fi
 
-    cp "${CONFIG_TEMPLATE_DIR}/db.conf" "${CONFIG_DIR}/db.conf"
-    cp "${CONFIG_TEMPLATE_DIR}/ftp.conf" "${CONFIG_DIR}/ftp.conf"
-    cp "${CONFIG_TEMPLATE_DIR}/server.conf" "${CONFIG_DIR}/server.conf"
+    cp "${CONFIG_TEMPLATE_DIR}/devops.conf" "${CONFIG_DIR}/devops.conf"
 
     mkdir -p "${CONFIG_DIR}/nginx"
     cp "${CONFIG_TEMPLATE_DIR}/nginx/default.conf" "${CONFIG_DIR}/nginx/default.conf"

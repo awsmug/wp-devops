@@ -16,11 +16,9 @@ _db_import() {
         exit
     fi
 
-    db_conf=${CONF_DIR}"/db.conf"
-    server_conf=${CONF_DIR}"/server.conf"
+    devops_conf=${CONF_DIR}"/devops.conf"
 
-    source ${db_conf}
-    source ${server_conf}
+    source ${devops_conf}
 
     read -p "This will drop all database data of the local installation and will replace it by new data. Are you really sure? (y/N) " i_am_sure
 
