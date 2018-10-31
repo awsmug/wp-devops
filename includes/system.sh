@@ -17,9 +17,17 @@ __DIR__() {
 ##
 # Printing out Error
 ##
-_error() {
+_error_file() {
     echo "Error in $(__FILE__):${LINENO}. ${1}"
 }
+
+##
+# Printing out Error
+##
+_error() {
+    echo "Error: ${1}"
+}
+
 ##
 # Echos wrong syntax
 ##
