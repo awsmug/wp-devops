@@ -15,7 +15,7 @@ source ${INCLUDES_DIR}/server.sh
 # Initializing devops
 ##
 if [ "$1" = "init" ]; then
-    if [ -z ${1+x} ]; then
+    if [ -z "$2" ]; then
         _missing_param "2" "devops init [all|links|files]"
     fi
 
