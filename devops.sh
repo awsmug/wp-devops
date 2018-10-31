@@ -15,11 +15,27 @@ source ${INCLUDES_DIR}/server.sh
 # Initializing devops
 ##
 if [ "$1" = "init" ]; then
-    _copy_files ${TEMPLATES_DIR}
-    echo "Finished copying config files."
+    if [ -z ${1+x} ]; then
+        _missing_param "2" "devops init [all|links|files]"
+    fi
 
-    _link_files ${BIN_DIR}
-    echo "Finished linking command files."
+    if [ "$2" = "all" ]; then
+        _copy_files ${TEMPLATES_DIR}
+        echo "Finished copying config files."
+
+         _link_files ${BIN_DIR}
+        echo "Finished linking command files."
+    fi
+
+    if [ "$2" = "links" ]; then
+         _link_files ${BIN_DIR}
+        echo "Finished linking command files."
+    fi
+
+    if [ "$2" = "files" ]; then
+         _link_files ${BIN_DIR}
+        echo "Finished linking command files."
+    fi
 
 ##
 # Updating devops

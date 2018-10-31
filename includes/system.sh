@@ -33,7 +33,7 @@ _wrong_syntax() {
 _missing_param() {
     number=${1}
     usage=${2}
-    echo $(_error "Missing Param ${syntax}. Correct usage is: ${usage}.")
+    echo $(_error "Missing Param ${number}. Correct usage is: ${usage}.")
 }
 
 ##
