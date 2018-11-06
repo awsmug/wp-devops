@@ -42,10 +42,10 @@ if [ "$1" = "init" ]; then
 # Updating devops
 ##
 elif [ "$1" = "update" ]; then
-    docker-compose -f "${CONF_DIR}/docker-compose.yml" --project-directory=$(pwd) pull
-    docker-compose -f "${CONF_DIR}/docker-compose.yml" --project-directory=$(pwd) build
+    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" pull
+    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" build
     composer update awsmug/wp-devops
-    _link_files ${BIN_DIR}
+    _link_files "${BIN_DIR}"
     echo "Finished updating devops."
 
 ##
