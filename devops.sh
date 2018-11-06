@@ -72,6 +72,15 @@ elif [ "$1" = "dbimport" ]; then
    _db_import $2
 
 ##
+# Import db
+##
+elif [ "$1" = "env" ]; then
+   echo "BIN_DIR: ${BIN_DIR}"
+   echo "CONF_DIR: ${CONF_DIR}"
+   echo "INCLUDES_DIR: ${INCLUDES_DIR}"
+   echo "TEMPLATES_DIR: ${TEMPLATES_DIR}"
+
+##
 # Help on wrong usage
 ##
 else
