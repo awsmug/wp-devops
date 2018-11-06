@@ -10,6 +10,7 @@ dc() {
     PREFIX=$(basename ${PREFIX})
     PREFIX=${PREFIX// /}
     PREFIX=${PREFIX//./}
+    PREFIX=${PREFIX,,}
 
     echo ${PREFIX}_${1}_1
 }
