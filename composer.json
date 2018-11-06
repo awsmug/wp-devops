@@ -10,5 +10,8 @@
       "homepage": "http://awesome.ug"
     }
   ],
-  "bin": ["devops.sh"]
+  "bin": ["devops.sh"],
+  "require": {
+    "codeception/codeception": "2.5.1"
+  }
 }
