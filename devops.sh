@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export BIN_DIR="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
+export BIN_DIR="$(pwd)/vendor/awsmug/wp-devops/"
 export CONF_DIR="$(pwd)/conf"
 export INCLUDES_DIR="${BIN_DIR}/includes"
 export TEMPLATES_DIR="${BIN_DIR}/templates"
