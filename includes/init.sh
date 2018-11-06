@@ -4,42 +4,36 @@
 # Initializing devops
 ##
 function _link_files {
-    local BIN_DIR=$1
+    local BIN_DIR="$1"
 
-    if [ -f "$(pwd)/devops.sh" ]; then
-        rm "$(pwd)/devops.sh"
-    fi
+    rm "$(pwd)"/devops.sh
+    ln -s "${BIN_DIR}"/devops.sh "$(pwd)"/devops.sh
 
-    ln -s "${BIN_DIR}/devops.sh" "$(pwd)/devops.sh"
-
-    if [ -f "$(pwd)/wp.sh" ]; then
-        rm "$(pwd)/wp.sh"
-    fi
-
-    ln -s "${BIN_DIR}/wp.sh" "$(pwd)/wp.sh"
+    rm "$(pwd)"/wp.sh
+    ln -s "${BIN_DIR}"/wp.sh "$(pwd)"/wp.sh
 }
 
 ##
 # Copy config files
 ##
 function _copy_files {
-    local TEMPLATES_DIR=$1
+    local TEMPLATES_DIR="$1"
 
-    CONFIG_TEMPLATE_DIR="${TEMPLATES_DIR}/conf"
-    CONFIG_DIR="$(pwd)/conf"
+    CONFIG_TEMPLATE_DIR="${TEMPLATES_DIR}"/conf
+    CONFIG_DIR="$(pwd)"/conf
 
     read -p "Do you want do develop a 'site', 'plugin' or 'theme'? (site) " DEV_TYPE
 
-    mkdir -p ${CONFIG_DIR}
+    mkdir -p "${CONFIG_DIR}"
 
     if [[ "plugin" == ${DEV_TYPE} ]]; then
-        cp "${TEMPLATES_DIR}/docker-compose-plugin.yml" "${CONFIG_DIR}/docker-compose.yml"
+        cp "${TEMPLATES_DIR}"/docker-compose-plugin.yml "${CONFIG_DIR}"/docker-compose.yml
 
         read -p "Do you want do add example plugin files? (yes|no) " EXAMPLE_PLUGIN_FILE
 
         if [[ "yes" == ${EXAMPLE_PLUGIN_FILE} ]]; then
             mkdir -p "$(pwd)/src/"
-            cp "${TEMPLATES_DIR}/plugin.php" "$(pwd)/src/my-new-plugin.php"
+            cp "${TEMPLATES_DIR}"/plugin.php "$(pwd)"/src/my-new-plugin.php
         fi
 
     elif [[ "theme" == ${DEV_TYPE} ]]; then
@@ -54,10 +48,10 @@ function _copy_files {
         fi
 
     elif [[ "site" == ${DEV_TYPE} ]]; then
-        cp "${TEMPLATES_DIR}/docker-compose-site.yml" "${CONFIG_DIR}/docker-compose.yml"
+        cp "${TEMPLATES_DIR}"/docker-compose-site.yml "${CONFIG_DIR}"/docker-compose.yml
 
     elif [[ "" == ${DEV_TYPE} ]]; then
-        cp "${TEMPLATES_DIR}/docker-compose-site.yml" "${CONFIG_DIR}/docker-compose.yml"
+        cp "${TEMPLATES_DIR}"/docker-compose-site.yml "${CONFIG_DIR}"/docker-compose.yml
 
     else
         echo "Wrong input!"
@@ -65,16 +59,16 @@ function _copy_files {
         exit 1
     fi
 
-    cp "${CONFIG_TEMPLATE_DIR}/devops.conf" "${CONFIG_DIR}/devops.conf"
+    cp "${CONFIG_TEMPLATE_DIR}"/devops.conf "${CONFIG_DIR}"/devops.conf
 
     mkdir -p "${CONFIG_DIR}/nginx"
-    cp "${CONFIG_TEMPLATE_DIR}/nginx/default.conf" "${CONFIG_DIR}/nginx/default.conf"
-    cp "${CONFIG_TEMPLATE_DIR}/nginx/nginx.conf" "${CONFIG_DIR}/nginx/nginx.conf"
+    cp "${CONFIG_TEMPLATE_DIR}"/nginx/default.conf "${CONFIG_DIR}"/nginx/default.conf
+    cp "${CONFIG_TEMPLATE_DIR}"/nginx/nginx.conf "${CONFIG_DIR}"/nginx/nginx.conf
 
     mkdir -p "${CONFIG_DIR}/php"
-    cp "${CONFIG_TEMPLATE_DIR}/php/Dockerfile" "${CONFIG_DIR}/php/Dockerfile"
-    cp "${CONFIG_TEMPLATE_DIR}/php/php.ini" "${CONFIG_DIR}/php/php.ini"
-    cp "${CONFIG_TEMPLATE_DIR}/php/www.conf" "${CONFIG_DIR}/php/www.conf"
+    cp "${CONFIG_TEMPLATE_DIR}"/php/Dockerfile "${CONFIG_DIR}"/php/Dockerfile
+    cp "${CONFIG_TEMPLATE_DIR}"/php/php.ini "${CONFIG_DIR}"/php/php.ini
+    cp "${CONFIG_TEMPLATE_DIR}"/php/www.conf "${CONFIG_DIR}"/php/www.conf
 
-    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" --project-directory=$(pwd) build
+    docker-compose -f "${CONFIG_DIR}"/docker-compose.yml --project-directory="$(pwd)" build
 }
