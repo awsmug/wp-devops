@@ -4,8 +4,8 @@
 # Starting environment
 ##
 _start() {
-    CONFIG_DIR="$(pwd)/conf"
-    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" --project-directory=$(pwd) up -d
+    CONFIG_DIR="$(pwd)"/conf
+    docker-compose -f "${CONFIG_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
 }
 
 ##
@@ -13,14 +13,13 @@ _start() {
 ##
 _stop() {
     CONFIG_DIR="$(pwd)/conf"
-    docker-compose -f "${CONFIG_DIR}/docker-compose.yml" --project-directory=$(pwd) down
+    docker-compose -f "${CONFIG_DIR}"/docker-compose.yml --project-directory="$(pwd)" down
 }
 
 ##
 # Restarting environment
 ##
 _restart() {
-    $(_stop)
-    $(_start)
+    _stop
+    _start
 }
-

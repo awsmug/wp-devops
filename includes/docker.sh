@@ -6,13 +6,13 @@ dc() {
         exit
     fi
 
-    PREFIX=$(pwd)
-    PREFIX=$(basename ${PREFIX})
-    PREFIX=${PREFIX// /}
-    PREFIX=${PREFIX//./}
-    PREFIX=${PREFIX,,}
+    PREFIX="$(pwd)"
+    PREFIX="$(basename ${PREFIX})"
+    PREFIX="${PREFIX// /}"
+    PREFIX="${PREFIX//./}"
+    PREFIX="${PREFIX,,}"
 
-    echo ${PREFIX}_${1}_1
+    echo "${PREFIX}_${1}_1"
 }
 
 di_exists() {
