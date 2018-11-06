@@ -1,10 +1,10 @@
 #!/bin/bash
 
 export CURRENT_DIR=$(printf "%q\n" "$(pwd)")
-export BIN_DIR="${CURRENT_DIR}vendor/awsmug/wp-devops/"
-export CONF_DIR="${CURRENT_DIR}conf"
-export INCLUDES_DIR="${BIN_DIR}includes"
-export TEMPLATES_DIR="${BIN_DIR}templates"
+export BIN_DIR="${CURRENT_DIR}/vendor/awsmug/wp-devops"
+export CONF_DIR="${CURRENT_DIR}/conf"
+export INCLUDES_DIR="${BIN_DIR}/includes"
+export TEMPLATES_DIR="${BIN_DIR}/templates"
 
 source "${INCLUDES_DIR}/system.sh"
 source "${INCLUDES_DIR}/db.sh"
