@@ -1,7 +1,8 @@
 #!/bin/bash
 
-export BIN_DIR="$(pwd)/vendor/awsmug/wp-devops/"
-export CONF_DIR="$(pwd)/conf"
+export CURRENT_DIR=$(printf "%q\n" "$(pwd)")
+export BIN_DIR="${CURRENT_DIR}/vendor/awsmug/wp-devops/"
+export CONF_DIR="${CURRENT_DIR}/conf"
 export INCLUDES_DIR="${BIN_DIR}/includes"
 export TEMPLATES_DIR="${BIN_DIR}/templates"
 
@@ -72,7 +73,7 @@ elif [ "$1" = "dbimport" ]; then
    _db_import $2
 
 ##
-# Import db
+# Print env vars for devops
 ##
 elif [ "$1" = "env" ]; then
    echo "BIN_DIR: ${BIN_DIR}"
