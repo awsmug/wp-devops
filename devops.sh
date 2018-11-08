@@ -73,6 +73,12 @@ elif [ "$1" = "dbimport" ]; then
    _db_import $2
 
 ##
+# Show logs
+##
+elif [ "$1" = "logs" ]; then
+   docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" logs
+
+##
 # Print env vars for devops
 ##
 elif [ "$1" = "env" ]; then
