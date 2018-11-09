@@ -10,7 +10,7 @@ dc() {
     PREFIX="$(basename ${PREFIX})"
     PREFIX="${PREFIX// /}"
     PREFIX="${PREFIX//./}"
-    PREFIX=$(tr [:lower:] "${PREFIX}")
+    PREFIX=$(echo "$PREFIX" | tr '[:upper:]' '[:lower:]')
 
     echo "${PREFIX}_${1}_1"
 }
