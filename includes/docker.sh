@@ -10,7 +10,7 @@ dc() {
     PREFIX="$(basename ${PREFIX})"
     PREFIX="${PREFIX// /}"
     PREFIX="${PREFIX//./}"
-    PREFIX="${PREFIX,,}"
+    PREFIX=$(tr '[a-z]' < "${PREFIX}")
 
     echo "${PREFIX}_${1}_1"
 }
