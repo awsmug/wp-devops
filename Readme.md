@@ -26,7 +26,7 @@ installation you can put your code to the ./src directory and it will be display
 section or use the initial plugin or theme files.
 
 ```bash
-vendor/bin/devops.sh init
+./vendor/bin/devops.sh init all
 ```
 
 Start the local server (After the first start, just wait a while until you see a ready installed WordPress):
