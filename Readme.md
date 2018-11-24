@@ -49,7 +49,7 @@ Updating devops scripts:
 
 ### Open the site
 
-The site can be reached at http://localhost at the browser. The admin can be reached at http://localhost/wp-admin/.
+The site can be reached at the host you have entered in the installation at the browser. The admin can be reached at http://YOUR-HOST/wp-admin/.
 
 Use the user 'admin' and password 'password' to login.
 
@@ -61,15 +61,21 @@ Use the WP CLI with the wp.sh script. Example to list all plugins (see the docum
 ./wp.sh plugin list
 ```
 
+Example to replace domain name of WordPress installation:
+
+```bash
+./wp.sh search-replace http://localhost http://mywordpres.test
+```
+
 ### Debugging
 
 To debug your script we implemented Xdebug to the PHP configuration. To get it running for your project, just add your 
-local IP to the php.ini file. This can be done in the 'conf/php/php.ini' file by replacing the *#DEBUG_REMOTE_IP#* 
+local IP to the php.ini file. This can be done in the 'conf/php/php.ini' file by replacing the *192.168.0.1* 
 string with your local IP. The default remote debugging port is *9000*.
 
 ### phpMyAdmin
 
-You can reach the phpMyAdmin interface at the URL http://localhost:8080.
+You can reach the phpMyAdmin interface at the URL http://YOUR-HOST:8080.
 
 ## System
 
