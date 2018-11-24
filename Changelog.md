@@ -3,6 +3,7 @@
 ## 0.3.0
 - Added hosts functions
 - Working with container ID after changing container names by docker
+- Fixed not working bin directory
 
 ## 0.2.0
 - Added param for logs [logs]

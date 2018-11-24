@@ -3,12 +3,11 @@
 # WP-CLI shortcut
 ##
 
-export CURRENT_DIR=$(pwd)
+export CURRENT_DIR="$(pwd)"
 export BIN_DIR="${CURRENT_DIR}/vendor/awsmug/wp-devops"
+export INCLUDES_DIR="${BIN_DIR}/includes"
 
-includes_dir="${BIN_DIR}/includes"
-
-source ${includes_dir}/system.sh
-source ${includes_dir}/docker.sh
+source "${INCLUDES_DIR}/system.sh"
+source "${INCLUDES_DIR}/docker.sh"
 
 docker exec -i $(dc wp) wp "$@"

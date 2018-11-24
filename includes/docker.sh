@@ -7,7 +7,7 @@ dc() {
     fi
 
     PREFIX="$(pwd)"
-    PREFIX="$(basename ${PREFIX})"
+    PREFIX=$(basename "${PREFIX}")
     PREFIX="${PREFIX// /}"
     PREFIX="${PREFIX//./}"
     PREFIX=$(echo "$PREFIX" | tr '[:upper:]' '[:lower:]')
