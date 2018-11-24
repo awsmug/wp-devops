@@ -9,7 +9,7 @@ IP="127.0.0.1"
 function _remove_host() {
     HOST_NAME="$1"
 
-    if [[ "localhost" == HOST_NAME ]]; then
+    if [[ "localhost" == ${HOST_NAME} ]]; then
         exit 2
     fi
 
@@ -26,7 +26,7 @@ function _add_host() {
     HOST_NAME="$1"
     HOSTS_LINE="$IP\t$HOST_NAME # WP-Devops host"
 
-    if [[ "localhost" == HOST_NAME ]]; then
+    if [[ "localhost" == ${HOST_NAME} ]]; then
         exit 2
     fi
 
