@@ -25,6 +25,11 @@ function _remove_host() {
 function _add_host() {
     HOST_NAME="$1"
     HOSTS_LINE="$IP $HOST_NAME # WP-Devops host"
+
+    if [[ "localhost" == HOST_NAME ]]; then
+        exit 2
+    fi
+
     if [ -n "$(grep $HOST_NAME /etc/hosts)" ]
         then
             echo "$HOST_NAME already exists : $(grep $HOST_NAME $ETC_HOSTS)"
