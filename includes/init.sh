@@ -87,6 +87,6 @@ function _set_host {
 
     REPLACE_LINE=$(cat ./conf/devops.conf | grep ^LOCAL_HOST)
 
-    sed -i -e "s/${REPLACE_LINE}/LOCAL_HOST=${LOCAL_HOST}/g" "${CONFIG_DIR}/devops.conf"
+    sed -i -e "s/^${REPLACE_LINE}/LOCAL_HOST=${LOCAL_HOST}/g" "${CONFIG_DIR}/devops.conf"
     rm "${CONFIG_DIR}/devops.conf-e"
 }
