@@ -4,16 +4,25 @@
 # Starting environment
 ##
 _start() {
-    CONFIG_DIR="$(pwd)"/conf
-    docker-compose -f "${CONFIG_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
+    CONF_DIR="$(pwd)"/conf
+    devops_conf=${CONF_DIR}"/devops.conf"
+
+    source ${devops_conf}
+    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
+
+    _add_host ${LOCAL_HOST}
 }
 
 ##
 # Stopping environment
 ##
 _stop() {
-    CONFIG_DIR="$(pwd)/conf"
-    docker-compose -f "${CONFIG_DIR}"/docker-compose.yml --project-directory="$(pwd)" down
+    CONF_DIR="$(pwd)/conf"
+    devops_conf=${CONF_DIR}"/devops.conf"
+
+    source ${devops_conf}
+    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" down
+    _remove_host ${LOCAL_HOST}
 }
 
 ##

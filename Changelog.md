@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0
+- Added hosts functions
+
 ## 0.2.0
 - Added param for logs [logs]
 - Added subparams for init [all/links/files]

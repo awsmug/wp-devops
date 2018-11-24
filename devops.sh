@@ -11,6 +11,7 @@ source "${INCLUDES_DIR}"/db.sh
 source "${INCLUDES_DIR}"/init.sh
 source "${INCLUDES_DIR}"/docker.sh
 source "${INCLUDES_DIR}"/server.sh
+source "${INCLUDES_DIR}"/hosts.sh
 
 ##
 # Initializing devops
