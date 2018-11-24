@@ -72,3 +72,18 @@ function _copy_files {
 
     docker-compose -f "${CONFIG_DIR}"/docker-compose.yml --project-directory="$(pwd)" build
 }
+
+##
+# Setting host
+##
+function _set_host {
+    CONFIG_DIR="$(pwd)"/conf
+
+    read -p "What will be the host name of this installation? (localhost) " LOCAL_HOST
+
+    if [[ "localhost" == ${LOCAL_HOST} ]]; then
+        exit 1
+    fi
+
+    sed -i 's/http:\/\/localhost/http:\/\/${LOCAL_HOST}/g' ${CONFIG_DIR}/devops.conf
+}

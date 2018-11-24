@@ -25,8 +25,11 @@ if [ "$1" = "init" ]; then
         _copy_files "${TEMPLATES_DIR}"
         echo "Finished copying config files."
 
-         _link_files "${BIN_DIR}"
+        _link_files "${BIN_DIR}"
         echo "Finished linking command files."
+
+        _set_host
+        echo "Finished changing host name."
     fi
 
     if [ "$2" = "links" ]; then
@@ -37,6 +40,11 @@ if [ "$1" = "init" ]; then
     if [ "$2" = "files" ]; then
          _link_files "${BIN_DIR}"
         echo "Finished linking command files."
+    fi
+
+    if [ "$2" = "host" ]; then
+        _set_host
+        echo "Finished changing host name."
     fi
 
 ##
