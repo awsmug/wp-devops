@@ -4,10 +4,10 @@
 # Starting environment
 ##
 _start() {
-    CONF_DIR="$(pwd)"/conf
-    devops_conf=${CONF_DIR}"/devops.conf"
+    CONF_DIR="$(pwd)/conf"
+    devops_conf="${CONF_DIR}/devops.conf"
 
-    source ${devops_conf}
+    source "${devops_conf}"
     export LOCAL_HOST=${LOCAL_HOST}
 
     docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
@@ -19,9 +19,9 @@ _start() {
 ##
 _stop() {
     CONF_DIR="$(pwd)/conf"
-    devops_conf=${CONF_DIR}"/devops.conf"
+    devops_conf="${CONF_DIR}/devops.conf"
 
-    source ${devops_conf}
+    source "${devops_conf}"
     export LOCAL_HOST=${LOCAL_HOST}
 
     docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" down
