@@ -8,8 +8,9 @@ _start() {
     devops_conf=${CONF_DIR}"/devops.conf"
 
     source ${devops_conf}
-    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
+    EXPORT LOCAL_HOST=${LOCAL_HOST}
 
+    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
     _add_host ${LOCAL_HOST}
 }
 
@@ -21,6 +22,8 @@ _stop() {
     devops_conf=${CONF_DIR}"/devops.conf"
 
     source ${devops_conf}
+    EXPORT LOCAL_HOST=${LOCAL_HOST}
+
     docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" down
     _remove_host ${LOCAL_HOST}
 }

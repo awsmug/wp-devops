@@ -11,7 +11,7 @@ services:
       WP_LOCALE: en_US
       WP_USER: admin
       WP_PASS: password
-      WP_URL: localhost
+      WP_URL: ${LOCAL_HOST}
     volumes:
       - ./www:/var/www/html
       - ./src:/var/www/html/wp-content/plugins/plugin:ro
