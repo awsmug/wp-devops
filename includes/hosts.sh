@@ -9,6 +9,10 @@ IP="127.0.0.1"
 function _remove_host() {
     HOST_NAME="$1"
 
+    if [[ "localhost" == HOST_NAME ]]; then
+        exit 2
+    fi
+
     if [ -n "$(grep $HOST_NAME /etc/hosts)" ]
     then
         echo "$HOST_NAME Found in your $ETC_HOSTS, Removing now...";
@@ -20,7 +24,7 @@ function _remove_host() {
 
 function _add_host() {
     HOST_NAME="$1"
-    HOSTS_LINE="$IP\t$HOST_NAME"
+    HOSTS_LINE="$IP $HOST_NAME # WP-Devops host"
     if [ -n "$(grep $HOST_NAME /etc/hosts)" ]
         then
             echo "$HOST_NAME already exists : $(grep $HOST_NAME $ETC_HOSTS)"
