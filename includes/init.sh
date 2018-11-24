@@ -81,9 +81,12 @@ function _set_host {
 
     read -p "What will be the host name of this installation? (localhost) " LOCAL_HOST
 
-    if [[ "localhost" == ${LOCAL_HOST} ]]; then
-        exit 1
+    if [[ "" == ${LOCAL_HOST} ]]; then
+        LOCAL_HOST=localhost
     fi
 
-    sed -i 's/http:\/\/localhost/http:\/\/${LOCAL_HOST}/g' ${CONFIG_DIR}/devops.conf
+    REPLACE_LINE=$(cat ./conf/devops.conf | grep ^LOCAL_HOST)
+
+    sed -i -e "s/${REPLACE_LINE}/LOCAL_HOST=${LOCAL_HOST}/g" "${CONFIG_DIR}/devops.conf"
+    rm "${CONFIG_DIR}/devops.conf-e"
 }
