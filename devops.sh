@@ -18,7 +18,7 @@ source "${INCLUDES_DIR}"/hosts.sh
 ##
 if [ "$1" = "init" ]; then
     if [ -z "$2" ]; then
-        _missing_param "2" "devops init [all|links|files]"
+        _missing_param "2" "devops init [all|links|files|host]"
     fi
 
     if [ "$2" = "all" ]; then
