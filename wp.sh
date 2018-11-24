@@ -3,8 +3,10 @@
 # WP-CLI shortcut
 ##
 
-bin_dir="$(linked_file=$(readlink ${0}) && cd $(cd $(dirname ${0}) && echo $(pwd)) && cd $(dirname ${linked_file}) && echo $(pwd))"
-includes_dir="${bin_dir}/includes"
+export CURRENT_DIR=$(pwd)
+export BIN_DIR="${CURRENT_DIR}/vendor/awsmug/wp-devops"
+
+includes_dir="${BIN_DIR}/includes"
 
 source ${includes_dir}/system.sh
 source ${includes_dir}/docker.sh
