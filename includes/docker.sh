@@ -12,7 +12,8 @@ dc() {
     PREFIX="${PREFIX//./}"
     PREFIX=$(echo "$PREFIX" | tr '[:upper:]' '[:lower:]')
 
-    echo "${PREFIX}_${1}_1"
+    CONTAINER_FILTER="${PREFIX}_${1}"
+    docker ps -a | grep "${CONTAINER_FILTER}" | awk '{print $1}'
 }
 
 di_exists() {
