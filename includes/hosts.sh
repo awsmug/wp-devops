@@ -24,7 +24,7 @@ function _remove_host() {
 
 function _add_host() {
     HOST_NAME="$1"
-    HOSTS_LINE="$IP $HOST_NAME # WP-Devops host"
+    HOSTS_LINE="$IP\t$HOST_NAME # WP-Devops host"
 
     if [[ "localhost" == HOST_NAME ]]; then
         exit 2
