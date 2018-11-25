@@ -1,4 +1,4 @@
-# WordPress Devops (with Docker) - Version 0.3.0
+# WordPress Devops (with Docker) - Version 0.4.0
 
 This project want to leave the VVV way for developing WordPress projects and to use a more lightweight and easy way to 
 develop by using docker. The WP Devops contains an easy environment which is based on docker. It supports site-, plugin- and theme-development. 
@@ -77,6 +77,10 @@ string with your local IP. The default remote debugging port is *9000*.
 
 You can reach the phpMyAdmin interface at the URL http://YOUR-HOST:8080.
 
+### Mailcatcher
+
+You can reach the mailhug interface at the URL http://YOUR-HOST:8025.
+
 ## System
 
 ### Configuration
@@ -105,6 +109,7 @@ The environment contains:
 * WordPress
 * WP-CLI
 * phpMyAdmin
+* mailhug
 
 ### OS
 
@@ -117,5 +122,5 @@ We want to add further functionalities to the project which helps your on develo
 
 - Codeception for unit-testing and user testing.
 - Xdebug autoconfig or input of IP address.
-- Mailcatcher for catching emails from site.
 - Deployment scripts.
+- Script which sends success on finished WordPress installation.
