@@ -10,6 +10,7 @@ _start() {
     source "${devops_conf}"
     export LOCAL_HOST=${LOCAL_HOST}
 
+    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" build
     docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
     _add_host ${LOCAL_HOST}
 }
