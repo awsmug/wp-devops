@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+- Added mailcatcher
+- Building dockerfiles on startup
+
 ## 0.3.0
 - Added hosts functions
 - Working with container ID after changing container names by docker
