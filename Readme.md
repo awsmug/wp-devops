@@ -7,14 +7,26 @@ develop by using docker. The WP Devops contains an easy environment which is bas
 Instead of using the standard [docker wordpress container](https://hub.docker.com/_/wordpress/), WP Devops is using a [docker-compose](https://docs.docker.com/compose/production/) container infrastructure
 where everything can be setup in detail.
 
-## Setting up environment
+In contrast to the one container structure of the WordPress docker container, the WP Devops is based on a docker-compose 
+environment which is a lot more configurable. It contains a docker-compose file for the three types of development for 
+sites, themes and plugins. 
 
-### Requirements
+The environment contains:
 
-For WP Devops [Composer](https://getcomposer.org/download/) and [Docker](https://www.docker.com/) is required. Please 
-install before starting.
+* Nginx
+* PHP (with Xdebug)
+* Mariadb
+* WordPress
+* WP-CLI
+* phpMyAdmin
+* mailhug
 
-### Install
+## Requirements
+
+WP Devos are made for Mac and Linux, also [Composer](https://getcomposer.org/download/) and [Docker](https://www.docker.com/) is required. Please 
+install before running WP Devops.
+
+## Installation
 
 Add WP Devops functionality by using composer. 
 
@@ -29,6 +41,8 @@ section or use the initial plugin or theme files.
 ```bash
 ./vendor/bin/devops.sh init all
 ```
+
+## Running WP Devops
 
 Start the local server (After the first start, just wait a while until you see a ready installed WordPress):
 
@@ -48,11 +62,11 @@ Updating devops scripts:
 ./devops.sh update
 ```
 
-### Open the site
-
 The site can be reached at the host you have entered in the installation at the browser. The admin can be reached at http://YOUR-HOST/wp-admin/.
 
 Use the user 'admin' and password 'password' to login.
+
+## Environment
 
 ### WP-CLI
 
@@ -68,23 +82,28 @@ Example to replace domain name of WordPress installation:
 ./wp.sh search-replace http://localhost http://mywordpres.test
 ```
 
-### Debugging
+### phpMyAdmin
+
+You can reach the phpMyAdmin interface at the URL http://YOUR-HOST:8080.
+
+### MailHog
+
+You can reach the mailhug interface at the URL http://YOUR-HOST:8025.
+
+### XDebug
 
 To debug your script we implemented Xdebug to the PHP configuration. To get it running for your project, just add your 
 local IP to the php.ini file. This can be done in the 'conf/php/php.ini' file by replacing the *192.168.0.1* 
 string with your local IP. The default remote debugging port is *9000*.
 
-### phpMyAdmin
-
-You can reach the phpMyAdmin interface at the URL http://YOUR-HOST:8080.
-
-### Mailcatcher
-
-You can reach the mailhug interface at the URL http://YOUR-HOST:8025.
-
 ## System
 
-### Configuration
+### OS
+
+The scripts are tested on Mac OS and Linux. If you have informations or issues on other systems, please report on 
+[Github](https://github.com/awsmug/wp-devops/issues).
+
+### Further Configuration
 
 For further settings we have added further configuration files for your individual server configuration. This is a list
 of files we offer to setup by yourself:
@@ -95,27 +114,6 @@ of files we offer to setup by yourself:
 - conf/php/www.conf
 
 Please be careful on editing this files, this can cause issues to your setup.
-
-### Docker environment
-
-In contrast to the one container structure of the WordPress docker container, the WP Devops is based on a docker-compose 
-environment which is a lot more configurable. It contains a docker-compose file for the three types of development for 
-sites, themes and plugins. 
-
-The environment contains:
-
-* Nginx
-* PHP (with Xdebug)
-* Mariadb
-* WordPress
-* WP-CLI
-* phpMyAdmin
-* mailhug
-
-### OS
-
-The scripts are tested on Mac OSX. If you have informations or issues on other systems, please report on 
-[Github](https://github.com/awsmug/wp-devops/issues).
 
 ## Roadmap
 
