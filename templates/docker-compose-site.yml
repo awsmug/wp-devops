@@ -47,5 +47,10 @@ services:
     image: phpmyadmin/phpmyadmin
     ports:
     - 8080:80
+  mailcatcher:
+    image: mailhog/mailhog
+    ports:
+    - 1025:1025
+    - 8025:8025
 volumes:
   database:
