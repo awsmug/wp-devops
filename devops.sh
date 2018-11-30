@@ -106,5 +106,5 @@ elif [ "$1" = "env" ]; then
 # Help on wrong usage
 ##
 else
-    echo "Usage: $(basename $0) <init|update|up|down|restart|dbimport [filename]>"
+    echo "Usage: $(basename $0) <init|update|up|down|restart|dbimport [file]|dbexport [file]>"
 fi
