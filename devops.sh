@@ -82,6 +82,12 @@ elif [ "$1" = "dbimport" ]; then
    _db_import $2
 
 ##
+# Import db
+##
+elif [ "$1" = "dbexport" ]; then
+   _db_export $2
+
+##
 # Show logs
 ##
 elif [ "$1" = "logs" ]; then

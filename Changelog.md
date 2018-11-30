@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.0
+- Added dbexport param
+
 ## 0.4.0
 - Added mailcatcher
 - Building dockerfiles on startup

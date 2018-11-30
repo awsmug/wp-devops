@@ -47,3 +47,19 @@ _db_import() {
     read -n1 -r -p "Press any key to continue..." key
 }
 
+##
+# Imports a dump to db
+##
+_db_export() {
+    sql_dump=${1}
+
+    if [ -z ${sql_dump} ]; then
+        echo $(_missing_param "2" "devops.sh dbexport [SQL_FILE]")
+        exit
+    fi
+
+    devops_conf=${CONF_DIR}"/devops.conf"
+    source ${devops_conf}
+
+    docker exec $(dc db) mysqldump -u ${DB_LOCAL_USER} --password=${DB_LOCAL_PASS} ${DB_LOCAL_NAME} > ${sql_dump}
+}
