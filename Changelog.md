@@ -2,6 +2,7 @@
 
 ## 0.5.0
 - Added dbexport param
+- Set standard upload filesize to 20 MB
 
 ## 0.4.0
 - Added mailcatcher
