@@ -13,9 +13,9 @@ _start() {
     docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" build
 
     if [ "$1" = "logs" ]; then
-        docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
-    else
         docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up
+    else
+        docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
     fi
 
     _add_host ${LOCAL_HOST}
