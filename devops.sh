@@ -61,7 +61,7 @@ elif [ "$1" = "update" ]; then
 # Starting server
 ##
 elif [ "$1" = "up" ]; then
-    _start
+    _start $2
 
 ##
 # Stopping server

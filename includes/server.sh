@@ -11,7 +11,13 @@ _start() {
     export LOCAL_HOST=${LOCAL_HOST}
 
     docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" build
-    docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
+
+    if [ "$1" = "logs" ]; then
+        docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up -d
+    else
+        docker-compose -f "${CONF_DIR}"/docker-compose.yml --project-directory="$(pwd)" up
+    fi
+
     _add_host ${LOCAL_HOST}
 }
 
