@@ -88,7 +88,7 @@ You can reach the phpMyAdmin interface at the URL http://YOUR-HOST:8080.
 
 ### MailHog
 
-You can reach the MailHog interface at the URL http://YOUR-HOST:8025.
+You can reach the MailHog interface at the URL http://YOUR-HOST:8125.
 
 ### XDebug
 

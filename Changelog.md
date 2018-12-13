@@ -4,7 +4,8 @@
 - Added dbexport param
 - Set standard upload filesize to 20 MB
 - Added cached param to www volume for faster work
-- Different layers on PHP Dockerfile
+- Switched mailcatcher ports because of conflicts on linux based system
+- Switched to fix php version 7.2 because of xdebug installation problems on newer versions of php container
 
 ## 0.4.0
 - Added mailcatcher
