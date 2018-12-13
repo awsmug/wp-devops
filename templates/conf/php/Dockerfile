@@ -4,9 +4,11 @@ RUN apt-get update \
     && apt-get install -y \
     libfreetype6-dev \
     libjpeg-dev \
-    libpng-dev \
-    && yes | pecl install xdebug \
-    && docker-php-ext-configure gd \
+    libpng-dev
+
+RUN yes | pecl install xdebug
+
+RUN && docker-php-ext-configure gd \
             --enable-gd-native-ttf \
             --with-freetype-dir=/usr/include/freetype2 \
             --with-png-dir=/usr/include \
