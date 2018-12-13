@@ -36,8 +36,7 @@ _db_import() {
     docker exec $(dc db) mysql -u ${DB_LOCAL_USER} --password=${DB_LOCAL_PASS}  --database="${DB_LOCAL_NAME}" --execute="DROP DATABASE ${DB_LOCAL_NAME}; CREATE DATABASE ${DB_LOCAL_NAME};"
 
     echo "Importing new database from ${sql_dump} to database \"${DB_LOCAL_NAME}\"..."
-    docker cp ${sql_dump} $(dc db):/
-    docker exec -i $(dc db) mysql -u ${DB_LOCAL_USER} --password=${DB_LOCAL_PASS} --database="${DB_LOCAL_NAME}" < $(pwd)/${sql_dump}
+    cat ${sql_dump} | docker exec -i $(dc db) mysql -u ${DB_LOCAL_USER} --password=${DB_LOCAL_PASS} ${DB_LOCAL_NAME}
 
     echo "Search and replace \"${REMOTE_URL}\" with \"${LOCAL_URL}\" in WordPress database..."
     docker exec $(dc wp) wp search-replace "${REMOTE_URL}" "${LOCAL_URL}"
