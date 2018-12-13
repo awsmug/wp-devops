@@ -4,6 +4,7 @@
 - Added dbexport param
 - Set standard upload filesize to 20 MB
 - Added cached param to www volume for faster work
+- Different layers on PHP Dockerfile
 
 ## 0.4.0
 - Added mailcatcher
